@@ -13,10 +13,12 @@ tapeworm serves flat files as structured content through an UI or webAPI
 - customizable column delimiters 
 - customizable array delimiters
 - supports arrays inside of columns
+- supports an optional single unique key column
 ### Columns 
-- column ordering through ordinals
+- column may be set to non visible
+- column ordering 
 - column naming       
-- column Display Name 
+- column alias
 - default data value
 - strongly typed data per column (string, int?)
 - enable/disable sorting per colum 
@@ -55,7 +57,7 @@ tapeworm serves flat files as structured content through an UI or webAPI
 - export to data type
 - support all datatypes, include nullable per type
 
-##Configuration
+## Configuration
 
 ## this is the config format:
 - $config/filename.yml
@@ -102,7 +104,7 @@ properties:                                        # an array of fields per line
   sort_default                                     # is this a property that is sorted by default            , default false
   sort_default_asc                                 # the default direction of this sort                      , default false
   export:true                                      # can this property be exported                           , default true
-  options:[{'key','value'}}]                       # predefined fiolterable options for this property        , 
+  options:[{'key','value'}}]                       # predefined filterable options for this property         , 
 
 ```
 
