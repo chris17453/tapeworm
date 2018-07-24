@@ -2,15 +2,33 @@
 NAME="$1"
 CONFIG="$(pwd)"/config
 DATA="$(pwd)"/data
-sudo docker container stop "$1">/dev/null
-sudo docker build -t "$1" .
+if [[ ! -z "$2" ]] ; then
+    if [[ -d "$2" ]]; then
+	CONFIG="$2";
+	echo "Config override:" "$2"
+    else 
+	echo "Config override directory invalid:" "$2"
+    fi
+fi
+if [[ ! -z "$3" ]] ; then
+    if [[ -d "$3" ]]; then
+	DATA="$3";
+	echo "Data override:" "$3"
+    else 
+	echo "Data override directory invalid:" "$3"
+    fi
+fi
+
+sudo docker container stop "$NAME">/dev/null
+sudo docker container "$NAME" rm>/dev/null
+sudo docker build -t "$NAME" .
 sudo docker run \
     -d \
     -it \
     --rm \
-    --name tapeworm \
+    --name "$NAME" \
     -p 80:5001 \
     -v "$CONFIG":/app/config \
     -v "$DATA":/app/data  \
-         "$1"
+         "$NAME"
 
