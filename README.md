@@ -1,7 +1,13 @@
 # tapeworm
 
 ## Purpose
-tapeworm serves flat files as structured content through an UI or webAPI
+to serve flat data as structured content 
+
+## Use
+- Browsable CSV / database exports
+- Configuration via API
+- custom reporting
+- embeded webUI for clients 
 
 ## Visualization
 ![tapeworm demo](https://raw.githubusercontent.com/chris17453/tapeworm/master/media/tapeworm-demo.gif)
