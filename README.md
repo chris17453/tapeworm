@@ -20,6 +20,9 @@ tapeworm serves flat files as structured content through an UI or webAPI
 - hiding comments '#'
 - starting data read at file line x
 ### UI
+- hidden overflow for columns
+- fixed width columns
+- expandable columns
 - browsable data
 - paginated data
 ### WebAPI
