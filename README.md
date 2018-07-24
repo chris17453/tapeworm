@@ -33,19 +33,20 @@ tapeworm serves flat files as structured content through an UI or webAPI
 - browsable data
 - paginated data
 ### WebAPI
+- asynchronous api calls
 - discoverable data streams
 - paginatable data streams
 ### Output 
 - output to json yaml or raw
 ### Deployment
 - docker for simple deployment
-- built on dotnetcore, buildable directly on mac,pc or linux
+- built on dotnetcore, buildable directly on mac, pc or linux
 
 
 ## Limitations
 - records fail if strongly typed conversion is invalid
 - CRUD not fully exposed at the moment
-- high cpu use for read, parallellism 
+- high cpu use for initial read
 
 ## TODO
 - optimization
