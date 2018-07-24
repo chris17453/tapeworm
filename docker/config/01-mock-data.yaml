@@ -24,17 +24,17 @@ properties:
   ordinal: 0
   sort: true
   search: true
-  multi_search: true
+  multi_search: false
 - name: first
   ordinal: 2
-  width: 200
+  width: 150
   search: true
   sort: true
   search: true
   multi_search: true
 - name: last 
   ordinal: 1
-  width: 50
+  width: 150
   sort: true
   search: true
   multi_search: true
@@ -49,5 +49,5 @@ properties:
   search: true
   multi_search: true
 - name: ip_address
-  width: 100
+  width: 150
   
