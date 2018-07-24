@@ -7,9 +7,12 @@ tapeworm serves flat files as structured content through an UI or webAPI
 ![tapeworm demo](https://raw.githubusercontent.com/chris17453/tapeworm/master/media/tapeworm-demo.gif)
 
 ## Features
-## Input layer
+### Input layer
 - creates POCO object for each configuration
 - uses object graph deserialization of POCO for fast accurate data manipulation
+- customizable column delimiters 
+- customizable array delimiters
+- supports arrays inside of columns
 ### Columns 
 - column ordering through ordinals
 - column naming       
