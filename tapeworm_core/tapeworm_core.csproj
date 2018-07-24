@@ -1,0 +1,101 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <IntermediateOutputPath></IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="base\" />
+    <Folder Include="interface\" />
+    <Folder Include="output_models\" />
+    <Folder Include="class\" />
+    <Folder Include="config\" />
+    <Folder Include="queryable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="modle_base\model_base.cs" />
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="models\table.cs" />
+    <Compile Remove="model_definition\machines.cs" />
+    <Compile Remove="model_definition\model_library.cs" />
+    <Compile Remove="base\model_helper_base.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="YamlDotNet.NetCore" Version="1.0.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.8.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="docker_webAPP\app\apphost" />
+    <None Remove="docker_webAPP\app\createdump" />
+    <None Remove="docker_webAPP\app\System.Threading.Tasks.Dataflow.dll" />
+    <None Remove="docker_webAPP\app\System.Threading.Tasks.Extensions.dll" />
+    <None Remove="docker_webAPP\app\System.Threading.Tasks.Parallel.dll" />
+    <None Remove="docker_webAPP\app\System.Threading.Tasks.dll" />
+    <None Remove="docker_webAPP\app\System.Threading.Thread.dll" />
+    <None Remove="docker_webAPP\app\System.Threading.ThreadPool.dll" />
+    <None Remove="docker_webAPP\app\System.Threading.Timer.dll" />
+    <None Remove="docker_webAPP\app\System.Transactions.Local.dll" />
+    <None Remove="docker_webAPP\app\System.Transactions.dll" />
+    <None Remove="docker_webAPP\app\System.ValueTuple.dll" />
+    <None Remove="docker_webAPP\app\System.Web.HttpUtility.dll" />
+    <None Remove="docker_webAPP\app\System.Web.dll" />
+    <None Remove="docker_webAPP\app\System.Windows.dll" />
+    <None Remove="docker_webAPP\app\System.Xml.Linq.dll" />
+    <None Remove="docker_webAPP\app\System.Xml.ReaderWriter.dll" />
+    <None Remove="docker_webAPP\app\System.Xml.Serialization.dll" />
+    <None Remove="docker_webAPP\app\System.Xml.XDocument.dll" />
+    <None Remove="docker_webAPP\app\System.Xml.XPath.XDocument.dll" />
+    <None Remove="docker_webAPP\app\System.Xml.XPath.dll" />
+    <None Remove="docker_webAPP\app\System.Xml.XmlDocument.dll" />
+    <None Remove="docker_webAPP\app\System.Xml.XmlSerializer.dll" />
+    <None Remove="docker_webAPP\app\System.Xml.dll" />
+    <None Remove="docker_webAPP\app\WindowsBase.dll" />
+    <None Remove="docker_webAPP\app\YamlDotNet.NetCore.dll" />
+    <None Remove="docker_webAPP\app\tapeworm_core.deps.json" />
+    <None Remove="docker_webAPP\app\tapeworm_core.dll" />
+    <None Remove="docker_webAPP\app\tapeworm_core.pdb" />
+    <None Remove="docker_webAPP\app\libclrjit.so" />
+    <None Remove="docker_webAPP\app\System.Runtime.Extensions.dll" />
+    <None Remove="docker_webAPP\app\System.Runtime.Handles.dll" />
+    <None Remove="docker_webAPP\app\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <None Remove="docker_webAPP\app\System.Runtime.InteropServices.WindowsRuntime.dll" />
+    <None Remove="docker_webAPP\app\System.Runtime.InteropServices.dll" />
+    <None Remove="docker_webAPP\app\System.Runtime.Loader.dll" />
+    <None Remove="docker_webAPP\app\System.Runtime.Numerics.dll" />
+    <None Remove="docker_webAPP\app\System.Runtime.Serialization.Formatters.dll" />
+    <None Remove="docker_webAPP\app\System.Runtime.Serialization.Json.dll" />
+    <None Remove="docker_webAPP\app\System.Runtime.Serialization.Primitives.dll" />
+    <None Remove="docker_webAPP\app\System.Runtime.Serialization.Xml.dll" />
+    <None Remove="docker_webAPP\app\System.Runtime.Serialization.dll" />
+    <None Remove="docker_webAPP\app\System.Security.AccessControl.dll" />
+    <None Remove="docker_webAPP\app\System.Security.Claims.dll" />
+    <None Remove="docker_webAPP\app\System.Security.Cryptography.Algorithms.dll" />
+    <None Remove="docker_webAPP\app\System.Security.Cryptography.Cng.dll" />
+    <None Remove="docker_webAPP\app\System.Security.Cryptography.Csp.dll" />
+    <None Remove="docker_webAPP\app\System.Security.Cryptography.Encoding.dll" />
+    <None Remove="docker_webAPP\app\System.Security.Cryptography.Native.OpenSsl.a" />
+    <None Remove="docker_webAPP\app\System.Security.Cryptography.Native.OpenSsl.so" />
+    <None Remove="docker_webAPP\app\System.Security.Cryptography.OpenSsl.dll" />
+    <None Remove="docker_webAPP\app\System.Security.Cryptography.Primitives.dll" />
+    <None Remove="docker_webAPP\app\System.Security.Cryptography.X509Certificates.dll" />
+    <None Remove="docker_webAPP\app\System.Security.Principal.Windows.dll" />
+    <None Remove="docker_webAPP\app\System.Security.Principal.dll" />
+    <None Remove="docker_webAPP\app\System.Security.SecureString.dll" />
+    <None Remove="docker_webAPP\app\System.Security.dll" />
+    <None Remove="docker_webAPP\app\System.ServiceModel.Web.dll" />
+    <None Remove="docker_webAPP\app\System.ServiceProcess.dll" />
+    <None Remove="docker_webAPP\app\System.Text.Encoding.CodePages.dll" />
+    <None Remove="docker_webAPP\app\System.Text.Encoding.Extensions.dll" />
+    <None Remove="docker_webAPP\app\System.Text.Encoding.dll" />
+    <None Remove="docker_webAPP\app\System.Text.RegularExpressions.dll" />
+    <None Remove="docker_webAPP\app\System.Threading.Overlapped.dll" />
+    <None Remove="docker_webAPP\app\System.Threading.dll" />
+    <None Remove="docker_webAPP\app\libcoreclr.so" />
+  </ItemGroup>
+</Project>

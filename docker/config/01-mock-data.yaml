@@ -1,0 +1,53 @@
+﻿---
+name: mockdata
+display: "Mock Data"
+entity: "Test"
+group: "CSV_DUMP"
+uid:  "md"
+ordinal: 1
+regex: ""
+path: '/app/data/MOCK_DATA.CSV'
+field_delimiter: ","
+array_delimiter: ","
+comment_delimiter: "#"
+data_starts_on_line: 2
+comments_visible: false
+empty_lines_visible: false
+errors_visible: true
+key: "id"
+multi_search: true
+active: true
+properties:
+- name: id
+  type: int?
+  width: 50
+  ordinal: 0
+  sort: true
+  search: true
+  multi_search: true
+- name: first
+  ordinal: 2
+  width: 200
+  search: true
+  sort: true
+  search: true
+  multi_search: true
+- name: last 
+  ordinal: 1
+  width: 50
+  sort: true
+  search: true
+  multi_search: true
+- name: email
+  width: 0
+  sort: true
+  search: true
+  multi_search: true
+- name: gender
+  width: 50
+  sort: true
+  search: true
+  multi_search: true
+- name: ip_address
+  width: 100
+  

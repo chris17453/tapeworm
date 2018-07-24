@@ -1,0 +1,2025 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>AfterBuild</type>
+          <command></command>
+          <workingdir>${SolutionDir}</workingdir>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\tapeworm_core\tapeworm_core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\index.html" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap-grid.css" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap-grid.css.map" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap-grid.min.css" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap-grid.min.css.map" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap-reboot.css" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap-reboot.css.map" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap-reboot.min.css" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap-reboot.min.css.map" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap.css" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap.css.map" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap.min.css" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\css\bootstrap.min.css.map" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\js\bootstrap.bundle.js" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\js\bootstrap.bundle.js.map" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\js\bootstrap.bundle.min.js" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\js\bootstrap.bundle.min.js.map" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\js\bootstrap.js" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\js\bootstrap.js.map" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\js\bootstrap.min.js" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\js\bootstrap.min.js.map" />
+    <Content Remove="wwwroot\media\bootstrap-4.1.1\js\popper.min.js" />
+    <Content Remove="wwwroot\media\feather\feather.min.js" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\AUTHORS.txt" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\LICENSE.txt" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\index.html" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\jquery-ui.css" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\jquery-ui.js" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\jquery-ui.min.css" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\jquery-ui.min.js" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\jquery-ui.structure.css" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\jquery-ui.structure.min.css" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\jquery-ui.theme.css" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\jquery-ui.theme.min.css" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\package.json" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\external\jquery\jquery.js" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_444444_256x240.png" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_555555_256x240.png" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_777620_256x240.png" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_777777_256x240.png" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_cc0000_256x240.png" />
+    <Content Remove="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_ffffff_256x240.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\.editorconfig" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\.eslintignore" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\.eslintrc" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\.gitattributes" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\.gitignore" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\.jscsrc" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\.mailmap" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\AUTHORS" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\CHANGELOG.md" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\CONTRIBUTING.md" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\Gruntfile.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\README.md" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\bower.json" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\composer.json" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\example.json" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\index.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\package.json" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\tablesorter.jquery.json" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\test.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\addons\pager\jquery.tablesorter.pager.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\addons\pager\jquery.tablesorter.pager.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\addons\pager\icons\first.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\addons\pager\icons\last.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\addons\pager\icons\loading.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\addons\pager\icons\next.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\addons\pager\icons\prev.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\beta-testing\example-pager-custom-controls.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\beta-testing\example-widget-column-reorder.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\beta-testing\pager-custom-controls.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\beta-testing\widget-reorder.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\bootstrap.less" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\dragtable.mod.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\filter.formatter.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\highlights.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\metro.less" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.black-ice.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.blue.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.bootstrap.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.bootstrap_2.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.bootstrap_3.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.bootstrap_4.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.dark.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.default.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.dropbox.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.green.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.grey.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.ice.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.jui.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.less" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.materialize.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.metro-dark.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\theme.scss" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\widget.grouping.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\high-specificity\theme.blue.specific.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\black-asc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\black-desc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\black-unsorted.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\bootstrap-black-unsorted.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\bootstrap-white-unsorted.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\dragtable-handle.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\dragtable-handle.svg" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\dropbox-asc-hovered.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\dropbox-asc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\dropbox-desc-hovered.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\dropbox-desc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\green-asc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\green-desc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\green-header.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\green-unsorted.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\ice-asc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\ice-desc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\ice-unsorted.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\metro-black-asc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\metro-black-desc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\metro-loading.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\metro-unsorted.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\metro-white-asc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\metro-white-desc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\white-asc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\white-desc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\images\white-unsorted.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\psd\green-asc.psd" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\psd\green-desc.psd" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\psd\green-unsorted.psd" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\css\psd\metro-style.psd" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\dragtable.mod.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\filter.formatter.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\highlights.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\jquery.tablesorter.pager.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.blackice.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.blue.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.blue.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.bootstrap.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.bootstrap_2.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.bootstrap_3.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.bootstrap_4.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.dark.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.default.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.dropbox.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.green.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.grey.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.ice.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.jui.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.materialize.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\theme.metro-dark.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\widget.grouping.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\black-asc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\black-desc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\black-unsorted.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\bootstrap-black-unsorted.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\bootstrap-white-unsorted.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\dragtable-handle.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\dragtable-handle.svg" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\dropbox-asc-hovered.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\dropbox-asc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\dropbox-desc-hovered.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\dropbox-desc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\first.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\green-asc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\green-desc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\green-header.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\green-unsorted.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\ice-asc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\ice-desc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\ice-unsorted.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\last.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\loading.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-black-asc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-black-desc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-loading.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-unsorted.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-white-asc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-white-desc.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\next.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\prev.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\white-asc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\white-desc.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\images\white-unsorted.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\less\bootstrap.less" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\less\metro.less" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\less\theme.less" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\css\scss\theme.scss" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.combined.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.combined.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.widgets.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.widgets.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\extras\jquery.dragtable.mod.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\extras\jquery.metadata.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\extras\jquery.tablesorter.pager.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\extras\semver-mod.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-extract.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-iso8601.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-month.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-range.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-two-digit-year.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-weekday.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-duration.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-feet-inch-fraction.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-file-type.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-globalize.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-huge-numbers.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-ignore-articles.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-image.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-input-select.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-leading-zeros.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-metric.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-named-numbers.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-network.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-roman.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-alignChar.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-build-table.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-chart.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-columnSelector.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-columns.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-cssStickyHeaders.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-currentSort.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-editable.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-filter-formatter-html5.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-filter-formatter-jui.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-filter-formatter-select2.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-filter-type-insideRange.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-filter.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-formatter.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-grouping.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-headerTitles.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-lazyload.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-mark.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-math.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-output.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-pager.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-print.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-reflow.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-repeatheaders.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-resizable.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-saveSort.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-scroller.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-sort2Hash.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-sortTbodies.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-staticRow.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-stickyHeaders.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-storage.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-toggle.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-uitheme.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-vertical-group.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-view.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-add-rows.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-ajax.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-apply-widget.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-child-rows-filtered.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-child-rows.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-colspan.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-css-highlighting.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-dragtable.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-empty-table.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-extending-defaults.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-extractors-parsers.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-header-column-span.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-locale-sort.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-meta-headers.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-meta-parsers.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-meta-sort-list.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-method-sortreset.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-multiple-tbodies.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-custom-sort.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-date-format.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-debug.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-delay-init.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-digits.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-render-header.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-render-template.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-selectorsort.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-show-processing.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-append.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-empty.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-force.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-key.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-list.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-order.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-sortreset-sortrestart.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-text-extraction.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-textsorter-semver.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-theme-bootstrap-v2.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-theme-bootstrap-v3.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-theme-bootstrap-v4.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-theme-materialize.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-option-theme-metro-style.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-options-headers-digits-strings.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-options-headers-locked.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-options-headers-order.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-options-headers-parser.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-options-headers.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-pager-ajax.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-pager-filtered.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-pager.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-advanced.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-class-name.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-date-range.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-dates.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-duration.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-feet-inch-fraction.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-file-type.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-globalize.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-ignore-articles.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-ip-address.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-jquery-data.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-leading-zeros.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-metric.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-named-numbers.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-roman.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-parsers.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-trigger-sort.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-triggers.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-update-all.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-update-cell.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-align-character.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-bootstrap-theme.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-build-table.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-chart.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-column-selector.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-columns.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-css-sticky-header.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-current-sort.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-editable.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-any-match.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-childrows.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-custom-search.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-custom-search2.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-custom.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-external-inputs.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-formatter-1.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-formatter-2.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-formatter-select2.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-selectmenu.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-formatter.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-grouping-filter-childrows.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-grouping.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-header-titles.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-lazyload.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-mark.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-math.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-output.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-pager-ajax.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-pager.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-print.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-reflow.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-reflow1.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-reflow2.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-reflow3.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-resizable.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-savesort.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-scroller.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-sort-tbodies.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-sort-to-hash.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-static-row.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-sticky-header.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-toggle-tablesorter.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-ui-theme.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-vertical-group.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-view.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widget-zebra.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\example-widgets.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\index.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\themes.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\assets\City0.json" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\assets\City1.json" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\assets\City2.json" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\assets\City3.json" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\assets\ajax-content.html" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\assets\build.json" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\assets\build.txt" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\assets\theme_switcher.json" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\bootstrap-v2.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\bootstrap-v3.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\bootstrap-v4.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\jq.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\jquery-ui.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\magnific-popup.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\menu.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\prettify.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\rangeslider.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\select2-3.4.6.min.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\select2-spinner.gif" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\select2.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\select2x2.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\tipsy.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\glyphicons-halflings-white.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\glyphicons-halflings.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-icons_2694e8_256x240.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-icons_3d80b3_256x240.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-icons_72a7cf_256x240.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\fonts\glyphicons-halflings-regular.eot" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\fonts\glyphicons-halflings-regular.svg" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\fonts\glyphicons-halflings-regular.woff" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\img\external.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\img\grid-default-thumb.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\img\link.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\img\new-product-banner.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\img\sale-banner.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\img\screens-blue.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\img\screens.png" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\img\zenhub-badge.svg" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\bootstrap.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\demo-build-table.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\docs.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-1.2.6.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-1.4.4.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-2.2.4.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-latest.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-migrate-3.0.0.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-ui.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\jquery.jui_theme_switch.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\jquery.magnific-popup.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\jquery.tipsy.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\prettify.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\rangeslider.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\search-ie.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\search.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\select2-3.4.6.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\docs\js\sugar.min.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\jquery.tablesorter.combined.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\jquery.tablesorter.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\jquery.tablesorter.widgets.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\extras\jquery.dragtable.mod.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\extras\jquery.metadata.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\extras\semver-mod.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\extras\semver.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-extract.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-iso8601.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-month.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-range.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-two-digit-year.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-weekday.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-duration.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-feet-inch-fraction.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-file-type.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-globalize.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-huge-numbers.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-ignore-articles.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-image.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-input-select.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-leading-zeros.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-metric.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-named-numbers.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-network.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-roman.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-alignChar.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-build-table.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-chart.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-columnSelector.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-columns.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-cssStickyHeaders.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-currentSort.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-editable.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-filter-formatter-html5.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-filter-formatter-jui.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-filter-formatter-select2.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-filter-type-insideRange.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-filter.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-formatter.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-grouping.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-headerTitles.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-lazyload.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-mark.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-math.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-output.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-pager.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-print.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-reflow.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-repeatheaders.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-resizable.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-saveSort.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-scroller.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-sort2Hash.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-sortTbodies.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-staticRow.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-stickyHeaders.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-storage.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-toggle.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-uitheme.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-vertical-group.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-view.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\testing\authors.sh" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\testing\qunit-2.4.0.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\testing\qunit-2.4.0.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\testing\testing-ipv6.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\testing\testing-widgets.js" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\testing\testing.css" />
+    <Content Remove="wwwroot\media\tablesorter-2.30.6\testing\testing.js" />
+    <Content Remove="wwwroot\media\tapeworm\css\tapeworm.css" />
+    <Content Remove="wwwroot\media\tapeworm\js\app.js" />
+    <Content Remove="wwwroot\media\tapeworm\js\data_report.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.Production.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="model_definitions\simple\compiled\01-machines.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap-grid.css" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap-grid.min.css" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap-reboot.css" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap-reboot.min.css" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap.css" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap.css.map" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap.min.css" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\js\bootstrap.js" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\js\bootstrap.js.map" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\js\bootstrap.min.js" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\media\bootstrap-4.1.1\js\popper.min.js" />
+    <None Include="wwwroot\media\feather\feather.min.js" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\AUTHORS.txt" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\LICENSE.txt" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\index.html" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\jquery-ui.css" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\jquery-ui.js" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\jquery-ui.min.css" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\jquery-ui.min.js" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\jquery-ui.structure.css" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\jquery-ui.structure.min.css" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\jquery-ui.theme.css" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\jquery-ui.theme.min.css" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\package.json" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\external\jquery\jquery.js" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_444444_256x240.png" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_555555_256x240.png" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_777620_256x240.png" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_777777_256x240.png" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_cc0000_256x240.png" />
+    <None Include="wwwroot\media\jquery-ui-1.12.1\images\ui-icons_ffffff_256x240.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\.editorconfig" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\.eslintignore" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\.eslintrc" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\.gitattributes" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\.gitignore" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\.jscsrc" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\.mailmap" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\AUTHORS" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\CHANGELOG.md" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\CONTRIBUTING.md" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\Gruntfile.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\README.md" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\bower.json" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\composer.json" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\example.json" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\index.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\package.json" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\tablesorter.jquery.json" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\test.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\addons\pager\jquery.tablesorter.pager.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\addons\pager\jquery.tablesorter.pager.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\addons\pager\icons\first.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\addons\pager\icons\last.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\addons\pager\icons\loading.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\addons\pager\icons\next.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\addons\pager\icons\prev.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\beta-testing\example-pager-custom-controls.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\beta-testing\example-widget-column-reorder.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\beta-testing\pager-custom-controls.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\beta-testing\widget-reorder.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\bootstrap.less" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\dragtable.mod.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\filter.formatter.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\highlights.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\metro.less" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.black-ice.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.blue.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.bootstrap.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.bootstrap_2.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.bootstrap_3.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.bootstrap_4.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.dark.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.default.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.dropbox.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.green.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.grey.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.ice.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.jui.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.less" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.materialize.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.metro-dark.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\theme.scss" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\widget.grouping.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\high-specificity\theme.blue.specific.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\black-asc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\black-desc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\black-unsorted.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\bootstrap-black-unsorted.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\bootstrap-white-unsorted.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\dragtable-handle.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\dragtable-handle.svg" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\dropbox-asc-hovered.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\dropbox-asc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\dropbox-desc-hovered.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\dropbox-desc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\green-asc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\green-desc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\green-header.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\green-unsorted.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\ice-asc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\ice-desc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\ice-unsorted.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\metro-black-asc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\metro-black-desc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\metro-loading.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\metro-unsorted.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\metro-white-asc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\metro-white-desc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\white-asc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\white-desc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\images\white-unsorted.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\psd\green-asc.psd" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\psd\green-desc.psd" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\psd\green-unsorted.psd" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\css\psd\metro-style.psd" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\dragtable.mod.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\filter.formatter.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\highlights.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\jquery.tablesorter.pager.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.blackice.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.blue.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.blue.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.bootstrap.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.bootstrap_2.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.bootstrap_3.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.bootstrap_4.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.dark.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.default.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.dropbox.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.green.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.grey.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.ice.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.jui.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.materialize.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\theme.metro-dark.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\widget.grouping.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\black-asc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\black-desc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\black-unsorted.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\bootstrap-black-unsorted.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\bootstrap-white-unsorted.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\dragtable-handle.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\dragtable-handle.svg" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\dropbox-asc-hovered.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\dropbox-asc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\dropbox-desc-hovered.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\dropbox-desc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\first.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\green-asc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\green-desc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\green-header.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\green-unsorted.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\ice-asc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\ice-desc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\ice-unsorted.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\last.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\loading.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-black-asc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-black-desc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-loading.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-unsorted.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-white-asc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\metro-white-desc.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\next.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\prev.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\white-asc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\white-desc.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\images\white-unsorted.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\less\bootstrap.less" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\less\metro.less" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\less\theme.less" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\css\scss\theme.scss" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.combined.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.combined.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.widgets.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\jquery.tablesorter.widgets.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\extras\jquery.dragtable.mod.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\extras\jquery.metadata.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\extras\jquery.tablesorter.pager.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\extras\semver-mod.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-extract.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-iso8601.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-month.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-range.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-two-digit-year.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date-weekday.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-date.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-duration.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-feet-inch-fraction.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-file-type.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-globalize.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-huge-numbers.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-ignore-articles.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-image.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-input-select.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-leading-zeros.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-metric.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-named-numbers.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-network.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\parsers\parser-roman.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-alignChar.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-build-table.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-chart.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-columnSelector.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-columns.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-cssStickyHeaders.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-currentSort.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-editable.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-filter-formatter-html5.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-filter-formatter-jui.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-filter-formatter-select2.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-filter-type-insideRange.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-filter.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-formatter.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-grouping.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-headerTitles.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-lazyload.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-mark.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-math.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-output.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-pager.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-print.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-reflow.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-repeatheaders.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-resizable.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-saveSort.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-scroller.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-sort2Hash.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-sortTbodies.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-staticRow.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-stickyHeaders.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-storage.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-toggle.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-uitheme.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-vertical-group.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\dist\js\widgets\widget-view.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-add-rows.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-ajax.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-apply-widget.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-child-rows-filtered.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-child-rows.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-colspan.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-css-highlighting.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-dragtable.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-empty-table.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-extending-defaults.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-extractors-parsers.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-header-column-span.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-locale-sort.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-meta-headers.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-meta-parsers.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-meta-sort-list.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-method-sortreset.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-multiple-tbodies.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-custom-sort.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-date-format.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-debug.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-delay-init.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-digits.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-render-header.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-render-template.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-selectorsort.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-show-processing.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-append.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-empty.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-force.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-key.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-list.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-sort-order.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-sortreset-sortrestart.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-text-extraction.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-textsorter-semver.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-theme-bootstrap-v2.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-theme-bootstrap-v3.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-theme-bootstrap-v4.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-theme-materialize.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-option-theme-metro-style.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-options-headers-digits-strings.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-options-headers-locked.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-options-headers-order.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-options-headers-parser.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-options-headers.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-pager-ajax.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-pager-filtered.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-pager.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-advanced.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-class-name.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-date-range.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-dates.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-duration.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-feet-inch-fraction.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-file-type.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-globalize.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-ignore-articles.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-ip-address.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-jquery-data.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-leading-zeros.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-metric.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-named-numbers.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers-roman.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-parsers.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-trigger-sort.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-triggers.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-update-all.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-update-cell.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-align-character.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-bootstrap-theme.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-build-table.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-chart.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-column-selector.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-columns.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-css-sticky-header.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-current-sort.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-editable.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-any-match.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-childrows.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-custom-search.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-custom-search2.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-custom.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-external-inputs.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-formatter-1.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-formatter-2.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-formatter-select2.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter-selectmenu.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-filter.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-formatter.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-grouping-filter-childrows.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-grouping.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-header-titles.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-lazyload.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-mark.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-math.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-output.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-pager-ajax.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-pager.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-print.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-reflow.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-reflow1.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-reflow2.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-reflow3.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-resizable.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-savesort.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-scroller.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-sort-tbodies.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-sort-to-hash.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-static-row.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-sticky-header.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-toggle-tablesorter.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-ui-theme.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-vertical-group.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-view.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widget-zebra.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\example-widgets.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\index.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\themes.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\assets\City0.json" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\assets\City1.json" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\assets\City2.json" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\assets\City3.json" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\assets\ajax-content.html" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\assets\build.json" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\assets\build.txt" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\assets\theme_switcher.json" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\bootstrap-v2.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\bootstrap-v3.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\bootstrap-v4.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\jq.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\jquery-ui.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\magnific-popup.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\menu.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\prettify.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\rangeslider.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\select2-3.4.6.min.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\select2-spinner.gif" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\select2.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\select2x2.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\tipsy.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\glyphicons-halflings-white.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\glyphicons-halflings.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-icons_2694e8_256x240.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-icons_2e83ff_256x240.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-icons_3d80b3_256x240.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-icons_72a7cf_256x240.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\css\images\ui-icons_ffffff_256x240.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\img\external.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\img\grid-default-thumb.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\img\link.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\img\new-product-banner.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\img\sale-banner.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\img\screens-blue.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\img\screens.png" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\img\zenhub-badge.svg" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\bootstrap.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\demo-build-table.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\docs.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-1.2.6.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-1.4.4.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-2.2.4.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-latest.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-migrate-3.0.0.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\jquery-ui.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\jquery.jui_theme_switch.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\jquery.tipsy.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\prettify.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\rangeslider.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\search-ie.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\search.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\select2-3.4.6.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\docs\js\sugar.min.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\jquery.tablesorter.combined.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\jquery.tablesorter.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\jquery.tablesorter.widgets.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\extras\jquery.dragtable.mod.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\extras\jquery.metadata.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\extras\semver-mod.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\extras\semver.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-extract.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-iso8601.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-month.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-range.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-two-digit-year.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date-weekday.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-date.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-duration.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-feet-inch-fraction.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-file-type.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-globalize.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-huge-numbers.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-ignore-articles.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-image.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-input-select.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-leading-zeros.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-metric.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-named-numbers.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-network.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\parsers\parser-roman.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-alignChar.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-build-table.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-chart.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-columnSelector.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-columns.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-cssStickyHeaders.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-currentSort.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-editable.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-filter-formatter-html5.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-filter-formatter-jui.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-filter-formatter-select2.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-filter-type-insideRange.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-filter.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-formatter.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-grouping.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-headerTitles.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-lazyload.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-mark.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-math.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-output.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-pager.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-print.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-reflow.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-repeatheaders.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-resizable.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-saveSort.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-scroller.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-sort2Hash.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-sortTbodies.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-staticRow.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-stickyHeaders.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-storage.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-toggle.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-uitheme.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-vertical-group.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\js\widgets\widget-view.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\testing\authors.sh" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\testing\qunit-2.4.0.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\testing\qunit-2.4.0.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\testing\testing-ipv6.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\testing\testing-widgets.js" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\testing\testing.css" />
+    <None Include="wwwroot\media\tablesorter-2.30.6\testing\testing.js" />
+    <None Include="wwwroot\media\tapeworm\css\tapeworm.css" />
+    <None Include="wwwroot\media\tapeworm\js\app.js" />
+    <None Include="wwwroot\media\tapeworm\js\data_report.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json.Bson">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json.bson\1.0.1\lib\netstandard1.3\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.interactive.async\3.1.1\lib\netstandard1.3\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.caching.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.caching.memory\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.SqlServer">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.caching.sqlserver\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.binder\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.CommandLine">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.commandline\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.EnvironmentVariables">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.environmentvariables\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.fileextensions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Ini">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.ini\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Ini.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.json\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.KeyPerFile">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.keyperfile\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.KeyPerFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.UserSecrets">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.usersecrets\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Xml">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.xml\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection\2.1.1\lib\netcoreapp2.0\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencymodel\2.1.0\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DiagnosticAdapter">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.diagnosticadapter\2.1.0\lib\netcoreapp2.0\Microsoft.Extensions.DiagnosticAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.fileproviders.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Composite">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.fileproviders.composite\2.1.1\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Embedded">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.fileproviders.embedded\2.1.1\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Embedded.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.fileproviders.physical\2.1.1\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.filesystemglobbing\2.1.1\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.hosting.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.hosting\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Http">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.http\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Identity.Core">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.identity.core\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Identity.Stores">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.identity.stores\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Identity.Stores.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.localization.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Localization.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.localization\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Configuration">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.configuration\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Console">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.console\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Debug">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.debug\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.EventSource">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.eventsource\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.TraceSource">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.tracesource\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.TraceSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.objectpool\2.1.1\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options.ConfigurationExtensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.options.configurationextensions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.options\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.primitives\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.WebEncoders">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.webencoders\2.1.1\lib\netstandard2.0\Microsoft.Extensions.WebEncoders.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.logging\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.protocols\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.protocols.openidconnect\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.WsFederation">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.protocols.wsfederation\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Protocols.WsFederation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.tokens\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens.Saml">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.tokens.saml\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Tokens.Saml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Xml">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.xml\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.net.http.headers\2.1.1\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.win32.registry\4.5.0\ref\netstandard2.0\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json.bson\1.0.1\lib\netstandard1.3\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\remotion.linq\2.2.0\lib\netstandard1.0\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlClient">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.data.sqlclient\4.5.1\ref\netcoreapp2.1\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.identitymodel.tokens.jwt\5.2.0\lib\netstandard1.4\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.interactive.async\3.1.1\lib\netstandard1.3\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.io.pipelines\4.5.0\ref\netstandard1.3\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.WebSocketProtocol">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.net.websockets.websocketprotocol\4.5.1\ref\netstandard2.0\System.Net.WebSockets.WebSocketProtocol.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.runtime.compilerservices.unsafe\4.5.1\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.security.accesscontrol\4.5.0\ref\netstandard2.0\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Cng">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.security.cryptography.cng\4.5.0\ref\netcoreapp2.1\System.Security.Cryptography.Cng.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.security.cryptography.xml\4.5.0\ref\netstandard2.0\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.security.permissions\4.5.0\ref\netstandard2.0\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.security.principal.windows\4.5.0\ref\netstandard2.0\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.text.encodings.web\4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.threading.channels\4.5.0\lib\netcoreapp2.1\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Antiforgery">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.antiforgery\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Antiforgery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Cookies">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.cookies\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Core">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.core\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Facebook">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.facebook\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Google">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.google\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.JwtBearer">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.jwtbearer\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.microsoftaccount\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.OAuth">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.oauth\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.openidconnect\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Twitter">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.twitter\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.WsFederation">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.wsfederation\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.WsFederation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authorization\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization.Policy">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authorization.policy\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Connections.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.connections.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Connections.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.CookiePolicy">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.cookiepolicy\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.CookiePolicy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cors">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.cors\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.cryptography.internal\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.cryptography.keyderivation\2.1.1\lib\netcoreapp2.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.dataprotection.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.dataprotection\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Extensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.dataprotection.extensions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.diagnostics.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Diagnostics.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.diagnostics\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.diagnostics.entityframeworkcore\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.HostFiltering">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.hostfiltering\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.HostFiltering.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.hosting.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.hosting\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.hosting.server.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Html.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.html.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Html.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Connections.Common">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.connections.common\1.0.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.Connections.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Connections">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.connections\1.0.1\lib\netcoreapp2.1\Microsoft.AspNetCore.Http.Connections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.extensions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.features\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.HttpOverrides">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.httpoverrides\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.HttpOverrides.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.HttpsPolicy">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.httpspolicy\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.HttpsPolicy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity.entityframeworkcore\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity.UI">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity.ui\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Identity.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity.UI.Views">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity.ui\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Identity.UI.Views.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.JsonPatch">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.jsonpatch\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.JsonPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Localization">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.localization\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Localization.Routing">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.localization.routing\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Localization.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.MiddlewareAnalysis">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.middlewareanalysis\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ApiExplorer">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.apiexplorer\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ApiExplorer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.core\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Cors">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.cors\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.DataAnnotations">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.dataannotations\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Json">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.formatters.json\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Formatters.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.formatters.xml\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Localization">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.localization\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Razor">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.razor\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Razor.Extensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.razor.extensions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.RazorPages">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.razorpages\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.RazorPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.TagHelpers">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.taghelpers\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.TagHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.viewfeatures\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.NodeServices">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.nodeservices\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.NodeServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Owin">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.owin\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.razor\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor.Language">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.razor.language\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Razor.Language.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor.Runtime">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.razor.runtime\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Razor.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCaching.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.responsecaching.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCaching">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.responsecaching\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCaching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCompression">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.responsecompression\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCompression.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Rewrite">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.rewrite\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Rewrite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.routing.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.routing\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.HttpSys">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.httpsys\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Server.HttpSys.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.IISIntegration">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.iisintegration\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Server.IISIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.Kestrel.Core">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.kestrel.core\2.1.1\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.Kestrel">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.kestrel\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Server.Kestrel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.Kestrel.Https">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.kestrel.https\2.1.1\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Https.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.kestrel.transport.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.kestrel.transport.sockets\2.1.1\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Session">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.session\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Session.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SignalR.Common">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr.common\1.0.1\lib\netcoreapp2.1\Microsoft.AspNetCore.SignalR.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SignalR.Core">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr.core\1.0.1\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SignalR">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr\1.0.1\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SignalR.Protocols.Json">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr.protocols.json\1.0.1\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SpaServices">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.spaservices\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.SpaServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SpaServices.Extensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.spaservices.extensions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.SpaServices.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.StaticFiles">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.staticfiles\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.StaticFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebSockets">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.websockets\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.webutilities\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Razor">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.codeanalysis.razor\2.1.1\lib\netstandard2.0\Microsoft.CodeAnalysis.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.dotnet.platformabstractions\2.1.0\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.abstractions\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Design">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.design\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.InMemory">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.inmemory\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.InMemory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.relational\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.SqlServer">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.sqlserver\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnet.webapi.client\5.2.6\lib\netstandard2.0\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Antiforgery">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Antiforgery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Cookies">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Core">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Facebook">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Google">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.JwtBearer">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.JwtBearer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.OAuth">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Twitter">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.WsFederation">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authentication.WsFederation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization.Policy">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Authorization.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.CookiePolicy">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.CookiePolicy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cors">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.DataProtection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.DataProtection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Extensions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.DataProtection.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Diagnostics.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.HostFiltering">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.HostFiltering.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Html.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Html.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.HttpOverrides">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.HttpOverrides.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.HttpsPolicy">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.HttpsPolicy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.JsonPatch">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.JsonPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Localization">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Localization.Routing">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Localization.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.MiddlewareAnalysis">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.MiddlewareAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ApiExplorer">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.ApiExplorer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Cors">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.DataAnnotations">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Json">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.Formatters.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Localization">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Razor">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Razor.Extensions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.RazorPages">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.RazorPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.TagHelpers">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.TagHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.NodeServices">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.NodeServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Owin">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor.Language">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Razor.Language.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor.Runtime">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Razor.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCaching.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCaching">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.ResponseCaching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCompression">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.ResponseCompression.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Rewrite">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Rewrite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.HttpSys">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Server.HttpSys.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.IISIntegration">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Server.IISIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Session">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.Session.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SpaServices">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.SpaServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SpaServices.Extensions">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.SpaServices.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.StaticFiles">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.StaticFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebSockets">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities">
+      <HintPath>docker_webAPP\app\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Razor">
+      <HintPath>docker_webAPP\app\Microsoft.CodeAnalysis.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions">
+      <HintPath>docker_webAPP\app\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Design">
+      <HintPath>docker_webAPP\app\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore">
+      <HintPath>docker_webAPP\app\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.InMemory">
+      <HintPath>docker_webAPP\app\Microsoft.EntityFrameworkCore.InMemory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational">
+      <HintPath>docker_webAPP\app\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.SqlServer">
+      <HintPath>docker_webAPP\app\Microsoft.EntityFrameworkCore.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.SqlServer">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Caching.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.CommandLine">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Configuration.CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.EnvironmentVariables">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Configuration.EnvironmentVariables.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Ini">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Configuration.Ini.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.KeyPerFile">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Configuration.KeyPerFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.UserSecrets">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Configuration.UserSecrets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Xml">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Configuration.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DiagnosticAdapter">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.DiagnosticAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Composite">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.FileProviders.Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Embedded">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.FileProviders.Embedded.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Http">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Localization.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Configuration">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Logging.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Console">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Logging.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Debug">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Logging.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.EventSource">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Logging.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.TraceSource">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Logging.TraceSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options.ConfigurationExtensions">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.WebEncoders">
+      <HintPath>docker_webAPP\app\Microsoft.Extensions.WebEncoders.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging">
+      <HintPath>docker_webAPP\app\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols">
+      <HintPath>docker_webAPP\app\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect">
+      <HintPath>docker_webAPP\app\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.WsFederation">
+      <HintPath>docker_webAPP\app\Microsoft.IdentityModel.Protocols.WsFederation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens">
+      <HintPath>docker_webAPP\app\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens.Saml">
+      <HintPath>docker_webAPP\app\Microsoft.IdentityModel.Tokens.Saml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Xml">
+      <HintPath>docker_webAPP\app\Microsoft.IdentityModel.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers">
+      <HintPath>docker_webAPP\app\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson">
+      <HintPath>docker_webAPP\app\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq">
+      <HintPath>docker_webAPP\app\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlClient">
+      <HintPath>docker_webAPP\app\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>docker_webAPP\app\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+      <HintPath>docker_webAPP\app\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines">
+      <HintPath>docker_webAPP\app\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>docker_webAPP\app\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.WebSocketProtocol">
+      <HintPath>docker_webAPP\app\System.Net.WebSockets.WebSocketProtocol.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>docker_webAPP\app\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml">
+      <HintPath>docker_webAPP\app\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions">
+      <HintPath>docker_webAPP\app\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web">
+      <HintPath>docker_webAPP\app\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels">
+      <HintPath>docker_webAPP\app\System.Threading.Channels.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="model_definitions\simple\01-machines.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="model_definitions\simple\02-virtual_machines.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="model_definitions\simple\03-networks.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="model_definitions\simple\04-networks2.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="model_definitions\simple\05-install_clients.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="model_definitions\simple\06-deployments.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="model_definitions\simple\07-addresses2.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RuntimeIdentifiers>win10-x64;osx.10.11-x64;fedora.28-x64</RuntimeIdentifiers>
+  </PropertyGroup> 
+ </Project>

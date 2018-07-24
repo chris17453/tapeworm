@@ -1,0 +1,17 @@
+/home/nd/repos/okarin/tapeworm/tapeworm_app/bin/Debug/netcoreapp2.1/tapeworm_cli.deps.json
+/home/nd/repos/okarin/tapeworm/tapeworm_app/bin/Debug/netcoreapp2.1/tapeworm_cli.runtimeconfig.json
+/home/nd/repos/okarin/tapeworm/tapeworm_app/bin/Debug/netcoreapp2.1/tapeworm_cli.runtimeconfig.dev.json
+/home/nd/repos/okarin/tapeworm/tapeworm_app/bin/Debug/netcoreapp2.1/tapeworm_cli.dll
+/home/nd/repos/okarin/tapeworm/tapeworm_app/bin/Debug/netcoreapp2.1/tapeworm_cli.pdb
+/home/nd/repos/okarin/tapeworm/tapeworm_app/bin/Debug/netcoreapp2.1/tapeworm_core.dll
+/home/nd/repos/okarin/tapeworm/tapeworm_app/bin/Debug/netcoreapp2.1/tapeworm_core.pdb
+/home/nd/repos/okarin/tapeworm/tapeworm_app/obj/Debug/netcoreapp2.1/tapeworm_cli.csproj.CoreCompileInputs.cache
+/home/nd/repos/okarin/tapeworm/tapeworm_app/obj/Debug/netcoreapp2.1/tapeworm_cli.RazorAssemblyInfo.cache
+/home/nd/repos/okarin/tapeworm/tapeworm_app/obj/Debug/netcoreapp2.1/tapeworm_cli.RazorAssemblyInfo.cs
+/home/nd/repos/okarin/tapeworm/tapeworm_app/obj/Debug/netcoreapp2.1/tapeworm_cli.AssemblyInfoInputs.cache
+/home/nd/repos/okarin/tapeworm/tapeworm_app/obj/Debug/netcoreapp2.1/tapeworm_cli.AssemblyInfo.cs
+/home/nd/repos/okarin/tapeworm/tapeworm_app/obj/Debug/netcoreapp2.1/tapeworm_cli.RazorTargetAssemblyInfo.cache
+/home/nd/repos/okarin/tapeworm/tapeworm_app/obj/Debug/netcoreapp2.1/tapeworm_cli.dll
+/home/nd/repos/okarin/tapeworm/tapeworm_app/obj/Debug/netcoreapp2.1/tapeworm_cli.pdb
+/home/nd/repos/okarin/tapeworm/tapeworm_app/obj/Debug/netcoreapp2.1/tapeworm_cli.csprojAssemblyReference.cache
+/home/nd/repos/okarin/tapeworm/tapeworm_app/obj/Debug/netcoreapp2.1/tapeworm_cli.csproj.CopyComplete

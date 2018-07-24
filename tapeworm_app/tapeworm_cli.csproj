@@ -1,0 +1,542 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <StartAction>Project</StartAction>
+    <StartArguments>-h -v --parameters node:bob,machine:sam --format json --type machines --operation stats</StartArguments>
+    <ExternalConsole>true</ExternalConsole>
+    <ApplicationURL>https://localhost:5001</ApplicationURL>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Mono.Options" Version="5.3.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="class\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Properties\project.json" />
+    <Content Remove="appsettings.config" />
+    <Content Remove="appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="docker_webAPP\app\createdump" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\project.json" />
+    <None Include="appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\tapeworm_core\tapeworm_core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json.Bson">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json.bson\1.0.1\lib\netstandard1.3\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.interactive.async\3.1.1\lib\netstandard1.3\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.caching.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.caching.memory\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.SqlServer">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.caching.sqlserver\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.binder\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.CommandLine">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.commandline\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.EnvironmentVariables">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.environmentvariables\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.fileextensions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Ini">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.ini\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Ini.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.json\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.KeyPerFile">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.keyperfile\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.KeyPerFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.UserSecrets">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.usersecrets\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.UserSecrets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Xml">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration.xml\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection\2.1.1\lib\netcoreapp2.0\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencymodel\2.1.0\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DiagnosticAdapter">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.diagnosticadapter\2.1.0\lib\netcoreapp2.0\Microsoft.Extensions.DiagnosticAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.fileproviders.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Composite">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.fileproviders.composite\2.1.1\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Embedded">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.fileproviders.embedded\2.1.1\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Embedded.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.fileproviders.physical\2.1.1\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.filesystemglobbing\2.1.1\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.hosting.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.hosting\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Http">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.http\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Identity.Core">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.identity.core\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Identity.Stores">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.identity.stores\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Identity.Stores.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.localization.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Localization.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.localization\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Configuration">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.configuration\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Console">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.console\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Debug">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.debug\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.EventSource">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.eventsource\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.TraceSource">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.tracesource\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.TraceSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.objectpool\2.1.1\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options.ConfigurationExtensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.options.configurationextensions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.options\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.primitives\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.WebEncoders">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.webencoders\2.1.1\lib\netstandard2.0\Microsoft.Extensions.WebEncoders.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.logging\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.protocols\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.protocols.openidconnect\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.WsFederation">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.protocols.wsfederation\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Protocols.WsFederation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.tokens\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens.Saml">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.tokens.saml\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Tokens.Saml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Xml">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.xml\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.net.http.headers\2.1.1\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.win32.registry\4.5.0\ref\netstandard2.0\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json.bson\1.0.1\lib\netstandard1.3\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\remotion.linq\2.2.0\lib\netstandard1.0\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlClient">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.data.sqlclient\4.5.1\ref\netcoreapp2.1\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.identitymodel.tokens.jwt\5.2.0\lib\netstandard1.4\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.interactive.async\3.1.1\lib\netstandard1.3\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.io.pipelines\4.5.0\ref\netstandard1.3\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.WebSocketProtocol">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.net.websockets.websocketprotocol\4.5.1\ref\netstandard2.0\System.Net.WebSockets.WebSocketProtocol.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.runtime.compilerservices.unsafe\4.5.1\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.security.accesscontrol\4.5.0\ref\netstandard2.0\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Cng">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.security.cryptography.cng\4.5.0\ref\netcoreapp2.1\System.Security.Cryptography.Cng.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.security.cryptography.xml\4.5.0\ref\netstandard2.0\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.security.permissions\4.5.0\ref\netstandard2.0\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.security.principal.windows\4.5.0\ref\netstandard2.0\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.text.encodings.web\4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\system.threading.channels\4.5.0\lib\netcoreapp2.1\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Antiforgery">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.antiforgery\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Antiforgery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Cookies">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.cookies\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Core">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.core\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Facebook">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.facebook\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Google">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.google\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.JwtBearer">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.jwtbearer\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.microsoftaccount\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.OAuth">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.oauth\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.openidconnect\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Twitter">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.twitter\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.WsFederation">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authentication.wsfederation\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.WsFederation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authorization\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization.Policy">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authorization.policy\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Connections.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.connections.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Connections.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.CookiePolicy">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.cookiepolicy\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.CookiePolicy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cors">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.cors\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.cryptography.internal\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.cryptography.keyderivation\2.1.1\lib\netcoreapp2.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.dataprotection.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.dataprotection\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Extensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.dataprotection.extensions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.diagnostics.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Diagnostics.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.diagnostics\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.diagnostics.entityframeworkcore\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.HostFiltering">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.hostfiltering\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.HostFiltering.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.hosting.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.hosting\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.hosting.server.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Html.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.html.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Html.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Connections.Common">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.connections.common\1.0.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.Connections.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Connections">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.connections\1.0.1\lib\netcoreapp2.1\Microsoft.AspNetCore.Http.Connections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.extensions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.features\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.HttpOverrides">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.httpoverrides\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.HttpOverrides.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.HttpsPolicy">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.httpspolicy\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.HttpsPolicy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity.entityframeworkcore\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity.UI">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity.ui\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Identity.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity.UI.Views">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity.ui\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Identity.UI.Views.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.JsonPatch">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.jsonpatch\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.JsonPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Localization">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.localization\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Localization.Routing">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.localization.routing\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Localization.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.MiddlewareAnalysis">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.middlewareanalysis\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.MiddlewareAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ApiExplorer">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.apiexplorer\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ApiExplorer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.core\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Cors">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.cors\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.DataAnnotations">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.dataannotations\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Json">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.formatters.json\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Formatters.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.formatters.xml\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Localization">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.localization\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Razor">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.razor\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Razor.Extensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.razor.extensions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.RazorPages">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.razorpages\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.RazorPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.TagHelpers">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.taghelpers\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.TagHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.viewfeatures\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.NodeServices">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.nodeservices\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.NodeServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Owin">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.owin\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.razor\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor.Language">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.razor.language\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Razor.Language.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Razor.Runtime">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.razor.runtime\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Razor.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCaching.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.responsecaching.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCaching">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.responsecaching\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCaching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCompression">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.responsecompression\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCompression.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Rewrite">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.rewrite\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Rewrite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.routing.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.routing\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.HttpSys">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.httpsys\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Server.HttpSys.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.IISIntegration">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.iisintegration\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Server.IISIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.Kestrel.Core">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.kestrel.core\2.1.1\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.Kestrel">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.kestrel\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Server.Kestrel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.Kestrel.Https">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.kestrel.https\2.1.1\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Https.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.kestrel.transport.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.kestrel.transport.sockets\2.1.1\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Session">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.session\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Session.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SignalR.Common">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr.common\1.0.1\lib\netcoreapp2.1\Microsoft.AspNetCore.SignalR.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SignalR.Core">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr.core\1.0.1\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SignalR">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr\1.0.1\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SignalR.Protocols.Json">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.signalr.protocols.json\1.0.1\lib\netstandard2.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SpaServices">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.spaservices\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.SpaServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.SpaServices.Extensions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.spaservices.extensions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.SpaServices.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.StaticFiles">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.staticfiles\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.StaticFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebSockets">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.websockets\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.webutilities\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Razor">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.codeanalysis.razor\2.1.1\lib\netstandard2.0\Microsoft.CodeAnalysis.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.dotnet.platformabstractions\2.1.0\lib\netstandard1.3\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.abstractions\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Design">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.design\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.InMemory">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.inmemory\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.InMemory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.relational\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.SqlServer">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.sqlserver\2.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\..\..\..\..\..\usr\share\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnet.webapi.client\5.2.6\lib\netstandard2.0\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

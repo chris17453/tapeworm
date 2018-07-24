@@ -1,0 +1,16 @@
+#!/bin/bash
+NAME="$1"
+CONFIG="$(pwd)"/config
+DATA="$(pwd)"/data
+sudo docker container stop "$1">/dev/null
+sudo docker build -t "$1" .
+sudo docker run \
+    -d \
+    -it \
+    --rm \
+    --name tapeworm \
+    -p 80:5001 \
+    -v "$CONFIG":/app/config \
+    -v "$DATA":/app/data  \
+         "$1"
+
