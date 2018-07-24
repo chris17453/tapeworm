@@ -19,8 +19,8 @@ if [[ ! -z "$3" ]] ; then
     fi
 fi
 
-sudo docker container stop "$NAME">/dev/null
-sudo docker container rm "$NAME">/dev/null
+sudo docker container stop "$NAME">/dev/null 2>&1
+sudo docker container rm "$NAME">/dev/null 2>&1
 sudo docker build -t "$NAME" .
 sudo docker run \
     -d \
