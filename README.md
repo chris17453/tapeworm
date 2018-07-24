@@ -1,7 +1,7 @@
 # tapeworm
 
 ## Purpose
-to serve flat data as structured content 
+to serve flat data as configurable, structured content with a queriable interface
 
 ## Use
 - Browsable CSV / database exports
@@ -49,6 +49,8 @@ to serve flat data as structured content
 ### Deployment
 - docker for simple deployment
 - built on dotnetcore, buildable directly on mac, pc or linux
+- command line utility
+
 
 
 ## Limitations
