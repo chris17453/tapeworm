@@ -1,4 +1,10 @@
 # tapeworm
+```
+  
+                  00
+  [Mr tapey]      |~
+            -~=~=-*
+ ```
 
 ## Purpose
 to serve flat data as configurable, structured content with a queriable interface
