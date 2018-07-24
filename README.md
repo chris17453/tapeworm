@@ -1,11 +1,10 @@
 # tapeworm
 ```
-  
-                  00
-  [Mr tapey]      |~
-            -~=~=-*
- ```
-
+                  n       \ \ | / /   <--<--  '-----'
+                  00        \ | /             | CSV |
+  [Mr tapey]      |~          0               |     |
+            -~=~=-*       [WebAPI]    -->-->  '_____'
+```            
 ## Purpose
 to serve flat data as configurable, structured content with a queriable interface
 
