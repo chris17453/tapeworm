@@ -1,7 +1,0 @@
-/home/nd/repos/okarin/tapeworm/tapeworm_core/bin/Docker/netcoreapp2.1/tapeworm_core.deps.json
-/home/nd/repos/okarin/tapeworm/tapeworm_core/bin/Docker/netcoreapp2.1/tapeworm_core.dll
-/home/nd/repos/okarin/tapeworm/tapeworm_core/obj/Docker/netcoreapp2.1/tapeworm_core.csprojResolveAssemblyReference.cache
-/home/nd/repos/okarin/tapeworm/tapeworm_core/obj/Docker/netcoreapp2.1/tapeworm_core.csproj.CoreCompileInputs.cache
-/home/nd/repos/okarin/tapeworm/tapeworm_core/obj/Docker/netcoreapp2.1/tapeworm_core.AssemblyInfoInputs.cache
-/home/nd/repos/okarin/tapeworm/tapeworm_core/obj/Docker/netcoreapp2.1/tapeworm_core.AssemblyInfo.cs
-/home/nd/repos/okarin/tapeworm/tapeworm_core/obj/Docker/netcoreapp2.1/tapeworm_core.dll

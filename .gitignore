@@ -15,6 +15,15 @@
 #models
 compiled/
 config/
+bin/
+obj/
+tapeworm_app/obj/
+tapeworm_app/bin/
+tapeworm_core/bin/
+tapeworm_core/obj/
+tapeworm_webAPI/bin/
+tapeworm_webAPI/obj/
+	
 
 
 # Build results
