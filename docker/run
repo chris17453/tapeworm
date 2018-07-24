@@ -20,7 +20,7 @@ if [[ ! -z "$3" ]] ; then
 fi
 
 sudo docker container stop "$NAME">/dev/null
-sudo docker container "$NAME" rm>/dev/null
+sudo docker container rm "$NAME">/dev/null
 sudo docker build -t "$NAME" .
 sudo docker run \
     -d \
