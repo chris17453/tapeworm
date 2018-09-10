@@ -412,7 +412,7 @@
 				if(key===index) filter.push([parent.stats.properties[i], data]);
 			}
         }
-            if(multi_search!="" || sort_changed) { 
+            if(multi_search!="" && multi_search!==undefined || sort_changed) { 
                 page=0;
                 this.page=0; 
             }

@@ -6,23 +6,29 @@ using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using tapeworm_core;
 using System.Security.Policy;
+using Microsoft.EntityFrameworkCore.Query.ExpressionTranslators;
 
 namespace tapeworm {
     public class Program {
 
         public static void Main(string[] arguments) {
             Task<int> return_value=preform_operations(arguments);
-
             //return_value.Result;
 
         }//end function
 
+      
         static async Task<int> preform_operations(string[] arguments) {
             catalog cc=new catalog();
             options options=args.process(arguments);
 
             bool debug=false;
 
+            //Auto-config
+            if(options.type=="auto-config" && !String.IsNullOrWhiteSpace(options.data_dir)){
+                tapeworm_core.auto_config a=new tapeworm_core.auto_config(options.data_dir,options.config_dir,options.delimiters);
+                return 0;
+            }
 
             string app_settings=String.Empty;
 

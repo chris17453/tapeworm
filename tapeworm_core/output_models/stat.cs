@@ -65,9 +65,11 @@ namespace tapeworm_core  {
             output.AppendLine(String.Format(" Page Length        : {0}",page_length));
             output.AppendLine(String.Format(" Returned           : {0}",returned));
             output.AppendLine(String.Format(" Records            : {0}-{1}",record_start,record_end));
-            output.AppendLine(String.Format(" Field Delimiter    : {0}",globals.models[name].field_delimiter));
-            output.AppendLine(String.Format(" Array Delimiter    : {0}",globals.models[name].array_delimiter));
-            output.AppendLine(String.Format(" Commment Delemiter : {0}",globals.models[name].comment_delimiter));
+            output.AppendLine(String.Format(" Field Delimiter    : {0}",globals.models[name].delimiters.field));
+            output.AppendLine(String.Format(" Array Delimiter    : {0}",globals.models[name].delimiters.array));
+            foreach(char delimiter in globals.models[name].delimiters.comment) {
+                output.AppendLine(String.Format(" Commment Delemiter : {0}",delimiter.ToString()));
+            }
             output.AppendLine(String.Format(" First row of data  : {0}",globals.models[name].data_starts_on_line));
             output.AppendLine(string.Format("________________________________"));
             output.AppendLine("");

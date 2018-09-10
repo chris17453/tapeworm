@@ -3,6 +3,10 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <StartAction>Project</StartAction>
     <StartWorkingDirectory>.</StartWorkingDirectory>
+    <EnvironmentVariables>
+      <Variable name="ASPNETCORE_ENVIRONMENT" value="Development" xmlns="" />
+      <Variable name="ASPNETCORE_ENVIRONMENT" value="Development" xmlns="" />
+    </EnvironmentVariables>
     <LaunchUrl></LaunchUrl>
     <ApplicationURL>https://localhost:5001</ApplicationURL>
   </PropertyGroup>

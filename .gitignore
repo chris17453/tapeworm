@@ -23,6 +23,7 @@ tapeworm_core/bin/
 tapeworm_core/obj/
 tapeworm_webAPI/bin/
 tapeworm_webAPI/obj/
+docker/app/
 	
 
 

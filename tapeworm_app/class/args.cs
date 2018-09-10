@@ -4,12 +4,16 @@ using System.Linq;
 using Mono.Options;
 using Microsoft.EntityFrameworkCore.Internal;
 using tapeworm_core;
+using System.IO;
+using Microsoft.AspNetCore.Routing.Constraints;
+using Microsoft.Extensions.Primitives;
 namespace tapeworm {
     public static class args {
 
 
         public static options process(string[] arg_vars) {
             options o=new options();
+            delimiters default_delimters=new delimiters();
             Dictionary<string,string> cur        =null;
             List<string> errors=new List<string>();
 
@@ -27,12 +31,52 @@ namespace tapeworm {
                 "           --page {PAGE}" ,
                 "           --page_length {PAGE_LENGTH}" ,
                 "           --verbosity {LIMIT} ",
+                "           --auto-config {DATA_DIR}",
+                "           --config {CONFIG_DIR} ",
+                "           --field-delimiter {FIELD_DELIMITER} ",
+                "           --array-delimiter {ARRAY_DELIMITER} ",
+                "           --comment-delimiter [{COMMENT_DELIMITER}] (comma seperated array) ",
                 "           --build",
                 "Examples:",
                 "   tapeworm  -t xmachines -o report -i 1 -l 15 -f raw -v 15",
                 "   tapeworm  -t machines -o edit -pfield:value -f raw -v 15",
                 "   tapeworm  -t networks -o stats -f raw --v 15",
+                "   tapeworm  --auto-config /data/files/ /data/config",
                 "options:",
+                { "ac=|auto-config=",  "Auto build configuration files for an entire directory\n" +
+                                       "Will save in source directory unless config directory set.\n" +
+                                       "Can only be used with --config\n" +
+                                       "{DATA_DIR}=the directory to parse"
+                    ,v => {  
+                        o.data_dir=v.ToLower();
+                    }},
+                { "c=|config=",            "The configuration directory\n" +
+                                           "{CONFIG_DIR}=the directory to load or save configs to\n" 
+                    ,v => {  
+                        o.config_dir=v.ToLower();
+                    }},
+                { "field-delimiter=",      "The field seperator or delimter\n" +
+                                           "{FIELD_DELIMITER}=Character to split fields on. default='"+default_delimters.field+"'"
+                    ,v => {  
+                        o.delimiters.field=v[0];
+                    }},
+                { "array-delimiter=",      "The array seperator or delimter IN a field\n" +
+                                           "{ARRAY_DELIMITER}=Character to split field on. default='"+default_delimters.array+"'"
+                    ,v => {  
+                        o.delimiters.array=v[0];
+                    }},
+                { "comment-delimiter=",    "The character indicator of comment\n" +
+                                           "[{COMMENT_DELIMITER}]=Comma seperated array. each character \n"+
+                                           "at position 0 of a line to classify line as comment. default='"+String.Join(",",default_delimters.comment)+"'"
+                    ,v => {  
+                        string [] delimiters=v.Split(",");
+                        char[] delimiters_c=new char[delimiters.Length];
+                        for(int i=0;i<delimiters.Length;i++) {
+                            if(String.IsNullOrWhiteSpace(delimiters[i])) continue;
+                            delimiters_c[i]=delimiters[i][0];
+                        }
+                        o.delimiters.comment=delimiters_c;
+                    }},
                 { "t=|type=",      "The configuration to parse and function to perform \n" +
                                    "{CONFIG_TYPE}=("+String.Join(", ",o.types.ToArray())+")" 
                                    ,v => {  
@@ -100,17 +144,41 @@ namespace tapeworm {
                 errors.Add(" -"+e.Message);
                 o.error++;
             }
+          
+            if(o.help) {
+				p.WriteOptionDescriptions(Console.Out);
+            }
+            if(!String.IsNullOrWhiteSpace(o.data_dir)){
+                if(!Directory.Exists(o.data_dir)) {
+                    errors.Add(" -Data directory does not exist");
+                    o.error++;
+                } 
+
+                o.type="auto-config";
+
+                if(String.IsNullOrWhiteSpace(o.config_dir)){
+                    o.data_dir=o.data_dir;
+                }
+            }
+
+            if(!String.IsNullOrWhiteSpace(o.config_dir)){
+                if(!Directory.Exists(o.config_dir)) {
+                    errors.Add(" -Configuration directory does not exist");
+                    o.error++;
+                }
+            }
+
             if(string.IsNullOrEmpty(o.type)) {
                 errors.Add(" -Missing type");
                 o.error++;
             }
-            if(string.IsNullOrEmpty(o.operation)) {
-                errors.Add(" -Missing Operation");
-                o.error++;
-            }
-              
-            if(o.help) {
-				p.WriteOptionDescriptions(Console.Out);
+
+            if(o.type!="auto-config") {         //only generate error if not auto config.
+                
+                if(string.IsNullOrEmpty(o.operation)) {
+                    errors.Add(" -Missing Operation");
+                    o.error++;
+                }
             }
 
             if(o.verbosity>0) {
@@ -119,7 +187,7 @@ namespace tapeworm {
                     Console.WriteLine("\nErrors");
                     Console.WriteLine(String.Join("\n",errors.ToArray()));
                 }
-                Console.WriteLine("----------------------------------------------------------");
+               /* Console.WriteLine("----------------------------------------------------------");
                 Console.WriteLine("Execution Variables");
                 Console.WriteLine("----------------------------------------------------------");
                 Console.WriteLine(String.Format("  Type:          {0}",o.type));
@@ -133,6 +201,8 @@ namespace tapeworm {
                 Console.WriteLine(String.Format("  Page Size:     {0}",o.page_length));
                 Console.WriteLine(String.Format("  Help:          {0}",o.help));
                 Console.WriteLine("----------------------------------------------------------\n");
+                */
+                Console.WriteLine(o.ToString());
             }
 			return o;
 		}//end func

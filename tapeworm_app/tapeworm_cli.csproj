@@ -6,7 +6,7 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <StartAction>Project</StartAction>
-    <StartArguments>-h -v --parameters node:bob,machine:sam --format json --type machines --operation stats</StartArguments>
+    <StartArguments>-h -v --auto-config /etrade/etc --config /etrade/config</StartArguments>
     <ExternalConsole>true</ExternalConsole>
     <ApplicationURL>https://localhost:5001</ApplicationURL>
   </PropertyGroup>

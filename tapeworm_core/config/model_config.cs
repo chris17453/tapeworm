@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Collections.Immutable;
+using YamlDotNet.Serialization;
 //using tapeworm_core.queryable.sortable;
 
 namespace tapeworm_core{
@@ -36,9 +38,10 @@ namespace tapeworm_core{
         public string       uid                   { get; set; }
         public string       path                  { get; set; }
         public string       regex                 { get; set; }="";
-        public string       field_delimiter       { get; set; }=",";
-        public string       array_delimiter       { get; set; }="|";
-        public string       comment_delimiter     { get; set; }="#";
+//        public string       field_delimiter       { get; set; }=",";
+//        public string       array_delimiter       { get; set; }="|";
+//        public string       comment_delimiter     { get; set; }="#";
+        public delimiters   delimiters            { get; set; }     
         public string       key                   { get; set; }
         public bool         comments_visible      { get; set; }=false;
         public uint         data_starts_on_line   { get; set; }=1;
@@ -47,6 +50,8 @@ namespace tapeworm_core{
         public Type         class_type            { get; set; }
         public bool         multi_search          { get; set; }=true;
         public bool         active                { get; set; }=false;
+        public string       mode                  { get; set; }="simple";
+        public string       source                { get; set; }
         public property[]   properties            { get; set; }
 
 
@@ -109,11 +114,45 @@ namespace tapeworm_core{
                 }
             }//end main loop
         }//end function
+
+        public static config_file load_yaml(string file){
+            if(string.IsNullOrWhiteSpace(file)) {
+                Console.WriteLine("Cant Load, file is empty.");
+                return null;
+            }
+            Console.WriteLine($"Loading: {file}");
+            string yaml_text = File.ReadAllText(file);
+            var input        = new StringReader(yaml_text);
+            Deserializer deserializer=new DeserializerBuilder().IgnoreUnmatchedProperties().Build();
+            return deserializer.Deserialize<config_file>(input);
+        }//end load_yaml
+
+        public static bool save_yaml(config_file config,string file){
+            try{
+                if(config==null) {
+                    Console.WriteLine($"Cant save, config is null.");
+                    return false;
+                }
+                Console.WriteLine($"Saving: {file}");
+                using(TextWriter text_writer=new StreamWriter(file)) {
+                    var serializer = new Serializer();
+                    serializer.Serialize(text_writer, config);
+                    return true;
+                }
+            } catch(Exception ex){
+                Console.WriteLine($"Error saving: {ex.Message}");
+            }
+            return false;
+
+        }//end load_yaml
+
     }//end config class
 
     public class property{
         //
         public string                    name              { get; set; }      
+        public string                    bind_src          { get; set; }      
+        public string[]                  bind_target       { get; set; }      
         public string                    display           { get; set; }=String.Empty;
 					                     
         //type	                         

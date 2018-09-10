@@ -25,6 +25,10 @@ namespace tapeworm_core  {
         public string[]                       formats           { get; set; }=new string[] { "none","raw","json","yaml" };    
         public string                         profile           { get; set; }="flat_config";    
         public bool                           build             { get; set; }=false;
+        public string                         data_dir          { get; set; }
+        public string                         config_dir        { get; set; }
+        public delimiters                     delimiters        { get; set; }=new delimiters();
+
         public override string ToString() {
             StringBuilder output=new StringBuilder();
             output.AppendLine(string.Format("__[options]______________________"));
@@ -43,8 +47,10 @@ namespace tapeworm_core  {
             output.AppendLine(string.Format(" types        :{0}",string.Join(",",types.ToArray())));
             output.AppendLine(string.Format(" operations   :{0}",string.Join(",",operations.ToArray())));
             output.AppendLine(string.Format(" formats      :{0}",string.Join(",",formats.ToArray())));
-            output.AppendLine(string.Format(" profile      :{0}",profile      ));
-            output.AppendLine(string.Format(" build        :{0}",build        ));
+            output.AppendLine(string.Format(" profile      :{0}",profile     ));
+            output.AppendLine(string.Format(" build        :{0}",build       ));
+            output.AppendLine(string.Format(" data_dir     :{0}",data_dir    ));
+            output.AppendLine(string.Format(" config_dir   :{0}",config_dir  ));
             output.AppendLine(string.Format("_________________________________"));
             return output.ToString();
         }

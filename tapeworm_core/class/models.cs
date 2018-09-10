@@ -16,7 +16,8 @@ namespace tapeworm_core  {
             string[] files = Directory.GetFiles(folder_path, "*.yaml", SearchOption.AllDirectories);
             //return config_files;
              foreach(string file in files) {
-                config_file cf=load_yaml(file);
+                if(globals.debug) Console.WriteLine(String.Format("Loading: {0}",file));
+                config_file cf=config_file.load_yaml(file);
                 if(cf==null) {
                     if(globals.debug) Console.WriteLine(String.Format("bad configuration file -> {0}",file));
                     continue;
@@ -44,12 +45,6 @@ namespace tapeworm_core  {
             return config_files;
         }
 
-        public static config_file load_yaml(string file){
-            string yaml_text = File.ReadAllText(file);
-            var input        = new StringReader(yaml_text);
-            Deserializer deserializer=new DeserializerBuilder().IgnoreUnmatchedProperties().Build();
-            return deserializer.Deserialize<config_file>(input);
-        }//end load_yaml
-
+ 
     }//end class
 }//end namespace

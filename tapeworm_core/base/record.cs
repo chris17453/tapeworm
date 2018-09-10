@@ -51,7 +51,12 @@ namespace tapeworm_core {
             data=data.Trim();
 
             //split data and comments ..HACK    
-            int comment_index=data.IndexOf(globals.models[uid].comment_delimiter);
+            int comment_index=-1;
+            foreach(char delimiter in globals.models[uid].delimiters.comment) {
+                comment_index=data.IndexOf(delimiter);
+                if(comment_index==0) break; //stop trying once a comment delimiter is found
+            }
+
             if(pre_data) {
                 comment_index=0;
             }
@@ -135,7 +140,7 @@ namespace tapeworm_core {
         }
 
         public void set(string key) {
-            string[] tokens=data.Split(globals.models[uid].field_delimiter);
+            string[] tokens=data.Split(globals.models[uid].delimiters.field);
             /*
             if(null==properties || properties.Count()==0) { 
 				throw new Exception(string.Format("Properties  are invalid on object in set data"));
@@ -189,7 +194,7 @@ namespace tapeworm_core {
                     if(string.IsNullOrEmpty(value)) {
                         return;
                     }
-                                List<string>list_tokens=new List<string>(value.Split(globals.models[uid].array_delimiter));
+                                List<string>list_tokens=new List<string>(value.Split(globals.models[uid].delimiters.array));
                     try{
                         property.SetValue(this.model, list_tokens, null);
                     } catch {
@@ -202,7 +207,7 @@ namespace tapeworm_core {
                     if(string.IsNullOrEmpty(value)) {
                         return;
                     }
-                    List<string>list_tokens=new List<string>(value.Split(globals.models[uid].array_delimiter));
+                    List<string>list_tokens=new List<string>(value.Split(globals.models[uid].delimiters.array));
 					List<int> list_ints=new List<int>();
 					foreach(string list_token in list_tokens) {
 						int x_int=0;
@@ -247,10 +252,10 @@ namespace tapeworm_core {
 					output.Add("");
 				} else if(property.PropertyType == typeof(List<string>)){
 					string[] array=((List<string>)value).ToArray();
-                    output.Add(String.Join(globals.models[uid].array_delimiter,array));
+                    output.Add(String.Join(globals.models[uid].delimiters.array,array));
 				} else if(property.PropertyType == typeof(List<int>)){
                     int[] array=((List<int>)value).ToArray();
-                    output.Add(String.Join(globals.models[uid].array_delimiter,array));
+                    output.Add(String.Join(globals.models[uid].delimiters.array,array));
                 } else 	{
 					output.Add(value.ToString());
 				}
@@ -258,7 +263,7 @@ namespace tapeworm_core {
 			}
 
 			if(is_comment && is_data) {
-                return String.Format("{0,-80}:{1}",String.Join(globals.models[uid].field_delimiter,output.ToArray()),comment);
+                return String.Format("{0,-80}:{1}",String.Join(globals.models[uid].delimiters.field,output.ToArray()),comment);
 			} 
 			if(is_comment && !is_data) {
                 return String.Format("{0}",comment);
