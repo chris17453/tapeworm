@@ -14,7 +14,7 @@
 
 #models
 compiled/
-config/
+#config/
 bin/
 obj/
 tapeworm_app/obj/

@@ -426,7 +426,7 @@
         datareport.prototype.build_css=function(){
 			if(null==this.data_config) {
 				alert ("Missing Config")
-				return "";
+		    	return "";
 			}
 			var css = `
 			<style type='text/css'>
