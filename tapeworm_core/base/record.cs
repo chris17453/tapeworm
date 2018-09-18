@@ -11,15 +11,15 @@ using Newtonsoft.Json;
 namespace tapeworm_core {
 
     public class record{
-		public  bool   is_comment          { get; set; }=false;
+        public  bool   is_comment          { get; set; }=false;
         public  bool   is_data             { get; set; }=false;
         public  bool   is_error            { get; set; }=false;
         public  bool   is_blank            { get; set; }=false;
 		public  uint   line                { get; set; }=0;
         private string data                { get; set; }=String.Empty;
-        private string comment             { get; set; }=String.Empty;
+      // private string comment             { get; set; }=String.Empty;
         public  object model               { get; set; }
-        private string raw                 { get; set; }
+      //  private string raw                 { get; set; }
         private string error               { get; set; }=String.Empty;
         private string uid                 { get; set; }
         [JsonIgnore]
@@ -31,7 +31,7 @@ namespace tapeworm_core {
 
         public record(string uid,string key,uint line,string data,string file_path,string error_msg,bool err){
             this.uid         =uid;
-            this.raw                =data;
+          //  this.raw                =data;
 			this.line               =line;
 			this.error              =error_msg;
             this.is_error           =true;
@@ -39,7 +39,7 @@ namespace tapeworm_core {
 
         public record(string uid,string key,uint line,string data,string file_path,bool pre_data=false){
             this.uid         =uid;
-          this.raw=data;
+         //this.raw=data;
 			this.line=line;
 
             if(null==globals.models[uid] || null==globals.models[uid] .class_type) {
@@ -53,7 +53,7 @@ namespace tapeworm_core {
             //split data and comments ..HACK    
             int comment_index=-1;
             foreach(char delimiter in globals.models[uid].delimiters.comment) {
-                comment_index=data.IndexOf(delimiter);
+                comment_index=data.IndexOf(delimiter, StringComparison.Ordinal);
                 if(comment_index==0) break; //stop trying once a comment delimiter is found
             }
 
@@ -63,7 +63,7 @@ namespace tapeworm_core {
                 
             if(comment_index==0) {
 				is_comment=true;
-                comment=data.Substring(comment_index).Trim();
+                //comment=data.Substring(comment_index).Trim();
 
 				if(comment_index!=0)  {
 					data=data.Substring(0,comment_index-1);
@@ -148,13 +148,19 @@ namespace tapeworm_core {
 
             for(int index=0;index<tokens.Count(); index++) {
                 string value=tokens[index];
+
                 PropertyInfo property=globals.get_model_property(uid,index);
                 if(property==null) continue;
                 string property_name=property.Name;
                 if(!String.IsNullOrWhiteSpace(key) && property_name==key) {
                     this.key_hash=tokens[index].GetHashCode();
                 }
-
+                if(string.IsNullOrWhiteSpace(globals.models[uid].properties[index].bind_source)) {       //only set non objects
+                    bool res= ((irecord_helper)model).set_value(property_name,value, globals.models[uid].properties[index].is_array);
+                    if(!res) {  
+                        Console.WriteLine($"Failed to set {property_name}={value}"); 
+                    }
+                }
                 /*
                 if(index>=properties.Count()) break;                    //dont go out of index range
 
@@ -162,6 +168,7 @@ namespace tapeworm_core {
                 string value=tokens[index];
                 //IF
                 */
+                /*
 				if(property.PropertyType==typeof(string)) {
 					try{
                         property.SetValue(model, value, null);
@@ -222,7 +229,7 @@ namespace tapeworm_core {
                             throw new InvalidCastException(string.Format("Tokens: {3} Line: {2} List<int> Error setting value for {0}:{1} ",property_name,value,line,tokens.Count()));
                         }
                     }
-                }
+                }*/
             }//end loop
 		}//end function
 
@@ -237,9 +244,9 @@ namespace tapeworm_core {
 		}
 
 		public override string ToString() {
-			if(error.Any()) {
-                return String.Format("#error#{0}",raw);
-            }
+		//	if(error.Any()) {
+        //        return String.Format("#error#{0}",raw);
+        //    }
 
 			if(!is_data &&  !is_comment) return String.Empty;
    			List<string> output=new List<string>();
@@ -263,13 +270,13 @@ namespace tapeworm_core {
 			}
 
 			if(is_comment && is_data) {
-                return String.Format("{0,-80}:{1}",String.Join(globals.models[uid].delimiters.field,output.ToArray()),comment);
-			} 
+                return String.Format("{0,-80}:{1}{2}",String.Join(globals.models[uid].delimiters.field,output.ToArray()),"",line); //comment
+            } 
 			if(is_comment && !is_data) {
-                return String.Format("{0}",comment);
+                return String.Format("{0} {1}","",line);//comment);
             }
 		    if(!is_comment && is_data) {
-			    return String.Format("{0}",String.Join(":",output.ToArray()));
+                return String.Format("{0} {1}",String.Join(":",output.ToArray()),line);
             }
 			return "";
 		}

@@ -39,6 +39,7 @@ namespace tapeworm_webAPI {
                     options.ValidateScopes = context.HostingEnvironment.IsDevelopment();
             });
             wb.UseStartup<Startup>();
+            //wb.UseUrls("172.18.82.145:5001");
             wb.UseUrls("http://0.0.0.0:5001");
             return wb.Build();
         }

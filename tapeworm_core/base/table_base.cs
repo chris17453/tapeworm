@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 using System.Linq;
+using tapeworm_core.@base;
 
 
 namespace tapeworm_core  { 
@@ -120,7 +121,10 @@ namespace tapeworm_core  {
             }
             if(report_stats.visible==0) report_stats.pages=0;
             try{
+
+
                 List<record> page_of_computed_records=new List<record>();
+
                 for(uint i=start_index;i<report_stats.records;i++){
                     record item=computed_records[(int)i];
                     if(null==item) {
@@ -136,7 +140,6 @@ namespace tapeworm_core  {
                     page_of_computed_records.Add(item);
                     report_stats.record_end=i;
                 }
-                report_stats.record_start=start_index;
 
                 report returned_report=new report(report_stats,page_of_computed_records);
                 return returned_report;
@@ -238,6 +241,7 @@ namespace tapeworm_core  {
         				}
 
         			}
+                    //records.Sort((record x, record y) => x.line.CompareTo(y.line)); //order the list.. if usint parallel-ize
                     is_loaded=true;
         			file.Close();
                 stats.lines=index;

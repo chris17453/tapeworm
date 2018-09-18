@@ -38,9 +38,6 @@ namespace tapeworm_core{
         public string       uid                   { get; set; }
         public string       path                  { get; set; }
         public string       regex                 { get; set; }="";
-//        public string       field_delimiter       { get; set; }=",";
-//        public string       array_delimiter       { get; set; }="|";
-//        public string       comment_delimiter     { get; set; }="#";
         public delimiters   delimiters            { get; set; }     
         public string       key                   { get; set; }
         public bool         comments_visible      { get; set; }=false;
@@ -151,7 +148,7 @@ namespace tapeworm_core{
     public class property{
         //
         public string                    name              { get; set; }      
-        public string                    bind_src          { get; set; }      
+        public string                    bind_source       { get; set; }      
         public string[]                  bind_target       { get; set; }      
         public string                    display           { get; set; }=String.Empty;
 					                     

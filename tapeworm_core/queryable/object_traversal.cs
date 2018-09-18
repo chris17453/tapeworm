@@ -29,7 +29,7 @@ namespace tapeworm_core {
                 if(globals.debug) Console.WriteLine(String.Format("Source null. {0}:{1}",depth,property_path));
                 return new Tuple<Type,object>(null,null);
             }
-            int node_index=property_path.IndexOf('.');
+            int node_index=property_path.IndexOf('.', StringComparison.Ordinal);
             string property_node;
             //if(globals.debug) Console.WriteLine(String.Format("Node break is {0}",node_index));
             if(node_index<0) {

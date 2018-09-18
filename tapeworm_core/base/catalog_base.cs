@@ -116,7 +116,7 @@ namespace tapeworm_core  {
             table_base t=this[options.uid];
             switch(options.operation.ToLower()) {
                 /***ON SINGULAR TABLE****/
-                case "report": if(null==t) throw new Exception("Table did not load properly, Invalid type");
+                case "report": if(null==t) throw new Exception("Table did not load properly, Invalid type-report");
                                obj=await t.report(options); 
                                break;
                 case "list"  :  obj=globals.get_list();

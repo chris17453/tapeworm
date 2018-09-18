@@ -141,9 +141,9 @@ namespace tapeworm_webAPI.Controllers {
             Dictionary<string,object> group        =new Dictionary<string, object>();
             Dictionary<string,object> _meta        =new Dictionary<string, object>();
             Dictionary<string,object> hostvars     =new Dictionary<string, object>();
-            Dictionary<string,object> all          =new Dictionary<string,object>();
+            Dictionary<string,object> all          =new Dictionary<string, object>();
             Dictionary<string,object> ungrouped    =new Dictionary<string, object>();
-            Dictionary<string,object>  all_children =new Dictionary<string,object>();
+            Dictionary<string,object> all_children =new Dictionary<string, object>();
             //List<string> groups=new List<string>();
             foreach(record record in r.Result.records){
                 if(record.is_data) {

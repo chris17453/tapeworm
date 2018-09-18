@@ -187,21 +187,6 @@ namespace tapeworm {
                     Console.WriteLine("\nErrors");
                     Console.WriteLine(String.Join("\n",errors.ToArray()));
                 }
-               /* Console.WriteLine("----------------------------------------------------------");
-                Console.WriteLine("Execution Variables");
-                Console.WriteLine("----------------------------------------------------------");
-                Console.WriteLine(String.Format("  Type:          {0}",o.type));
-                Console.WriteLine(String.Format("  Format:        {0}",o.format));
-                Console.WriteLine(String.Format("  Operation:     {0}",o.operation));
-//                Console.WriteLine(String.Format("  Params:        {0}",string.Join(",",o.parameters.Select(x => x.Key + ":" + x.Value).ToArray()) ));
-                Console.WriteLine(String.Format("  Verbosity:     {0}",o.verbosity));
-                Console.WriteLine(String.Format("  Max Errors     {0}",o.max_error));
-                Console.WriteLine(String.Format("  Paginate:      {0}",o.paginate));
-                Console.WriteLine(String.Format("  Page:          {0}",o.page));
-                Console.WriteLine(String.Format("  Page Size:     {0}",o.page_length));
-                Console.WriteLine(String.Format("  Help:          {0}",o.help));
-                Console.WriteLine("----------------------------------------------------------\n");
-                */
                 Console.WriteLine(o.ToString());
             }
 			return o;

@@ -192,13 +192,16 @@
 			`;
 			
 			
-			
+            var tr="";
+            for(i=0;i<10;i++){
+                  tr+=`<tr><td colspan="${this.data_config.properties.length}"></td></tr>`;
+            }
 			this._container=$(`
 			${css}
 			${multi_search}
             <table class="${this.tablesorter_table} tablesorter table table-striped table-sm">
             <thead>${this.filters.thead}</thead>
-            <tbody></tbody>
+            <tbody>${tr}</tbody>
             <tfoot>${this.filters.tfoot}</tfoot>
             </table>
 			${pagination}`).appendTo(this.element);
