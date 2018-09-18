@@ -203,8 +203,25 @@ namespace tapeworm_core  {
                 stats.load_start=DateTime.Now.Ticks;
                 string line;  
                 uint index=0;
+                if(globals.debug) {
+                    Console.WriteLine($"Reading: {file_path}" );
+                }
+                if(!File.Exists(file_path)) {
+                    Console.WriteLine($"Data file does not exist: {file_path}" );
+                    return false;
+                }
                 System.IO.StreamReader file = new System.IO.StreamReader(file_path);
+                if(null==file) {
+                    Console.WriteLine($"Cannot open file: {file_path}" );
+                    return false;
+                }
+
                 bool has_key=!string.IsNullOrWhiteSpace(key);
+
+                if(globals.debug) {
+                    Console.WriteLine($"Key is '{key}' : {has_key}" );
+                }
+
                 while((line =await file.ReadLineAsync()) != null) {  
         				index++;
 
@@ -216,30 +233,37 @@ namespace tapeworm_core  {
                             } else {
                                 record=new record(uid,key,index,line,file_path,false);
                             }
+                         } catch (Exception ex) {
+                            record=new record(uid,key,index,line,file_path,ex.Message,true);
+                            errors.Add(ex.Message);
+                            if(globals.debug) {
+                                //  if(errors.Count<debug_limit) {
+                                Console.WriteLine("table parsing error: "+ex.Message);
+                                //  }
+                            }
+                        }
+                    /* TODO DUPE ERR
+                        try{         
                             if(has_key && record.is_data) { 
                                 int? hash=record.key_hash;
                                 if(null==hash) {
-                                  //  throw new Exception(string.Format("Key '{0}': is null ",key));
+                                    //  throw new Exception(string.Format("Key '{0}': is null ",key));
                                 }
                                 if(null!=records && records.Count>0) {
                                     record dupe=records.Find((r) =>r.key_hash==hash);
-                                   if(null!=dupe) {
+                                    if(null!=dupe) {
                                         record.is_error=true;
-                                      //  throw new Exception(string.Format("Duplicate record on key {0}:{1}",key,hash));                               
-                                   }
+                                        //  throw new Exception(string.Format("Duplicate record on key {0}:{1}",key,hash));                               
+                                    }
                                 }
                             }
-                           records.Add(record);	
-        				} catch (Exception ex) {
-                            records.Add(new record(uid,key,index,line,file_path,ex.Message,true));
-    						errors.Add(ex.Message);
-        					if(globals.debug) {
-        					//	if(errors.Count<debug_limit) {
-                              Console.WriteLine("table parsing error: "+ex.Message);
-        					//	}
-        					}
-        				}
+                        } catch (Exception ex) {
+                            if(globals.debug) {
+                            Console.WriteLine("table parsing error-dupe lookup: "+ex.Message);
+                        }
+                        */
 
+                       records.Add(record);	
         			}
                     //records.Sort((record x, record y) => x.line.CompareTo(y.line)); //order the list.. if usint parallel-ize
                     is_loaded=true;

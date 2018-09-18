@@ -22,6 +22,9 @@ fi
 sudo docker container stop "$NAME">/dev/null 2>&1
 sudo docker container rm "$NAME">/dev/null 2>&1
 sudo docker build -t "$NAME" .
+sudo docker tag "$NAME" gitlab.etrade.com:4567/cwatkin1/"$NAME"
+sudo docker push gitlab.etrade.com:4567/cwatkin1/"$NAME"
+
 sudo docker run \
     -d \
     -it \
